@@ -27,6 +27,7 @@
   "scripts": {
     "start": "node src/.",
     "dev": "nodemon -w src -w package.json -w .env",
+    "deploy": "now https://github.com/seacucumba/wavelo-stats.git -E .env --public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/seacucumba/wavelo-stats.git"
