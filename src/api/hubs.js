@@ -1,4 +1,3 @@
+const Hub = require('../models/hub')
 
-import Hub from '../models/hub'
-
-export default async () => Hub.find()
+module.exports = async () => Hub.find()

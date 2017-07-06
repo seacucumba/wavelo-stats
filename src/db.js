@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const {DB_USER, DB_PASSWORD} = process.env
 
 mongoose.Promise = global.Promise
 
-export default async function connect() {
+module.exports = async function connect() {
   console.log('Connecting to DB...');
 
   const db = mongoose.connection

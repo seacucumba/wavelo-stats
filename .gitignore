@@ -1,5 +1,3 @@
 node_modules
-build/_records
-./index.js
 .env
 .DS_Store

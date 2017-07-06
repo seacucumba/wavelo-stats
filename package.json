@@ -2,86 +2,32 @@
   "name": "wavelo-stats",
   "version": "0.0.1",
   "description": "wavelo.pl statistics and vizualization",
-  "main": "index.js",
+  "main": "src/index.js",
+  "author": "Pavel Strashnov",
   "license": "MIT",
   "engines": {
-    "node": ">=6.10.0"
+    "node": ">=7.10.0"
   },
   "dependencies": {
-    "babel-preset-latest": "^6.16.0",
     "dotenv": "^4.0.0",
     "fetchival": "^0.3.2",
-    "micro": "^6.1.0",
+    "jsonwebtoken": "^7.4.1",
+    "micro": "^7.3.3",
+    "micro-cors": "0.0.4",
+    "micro-jwt-auth": "^1.6.0",
     "microrouter": "^2.1.1",
-    "mongoose": "^4.11.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.1",
     "mongoose-geojson-schema": "^2.1.2",
     "node-fetch": "^1.7.1"
   },
   "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-jest": "^19.0.0",
-    "babel-loader": "^6.2.10",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "babel-register": "^6.18.0",
-    "chalk": "^1.1.3",
-    "eslint-config-samtgarson": "^0.0.2",
-    "jest": "^19.0.2",
-    "nodemon": "^1.11.0",
-    "ora": "^1.1.0",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1",
-    "source-map-support": "^0.4.9",
-    "test-listen": "^1.0.0",
-    "webpack": "2",
-    "xo": "^0.17.1"
+    "nodemon": "^1.11.0"
   },
   "scripts": {
-    "start": "node .",
-    "dev": "node build --watch",
-    "build": "node build",
-    "test": "jest && xo",
-    "test:spec": "jest",
-    "test:lint": "xo"
+    "start": "node src/.",
+    "dev": "nodemon -w src -w package.json -w .env",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "xo": {
-    "ignores": [
-      "index.js"
-    ],
-    "extends": "samtgarson",
-    "rules": {
-      "no-console": 0
-    },
-    "overrides": [
-      {
-        "files": "build/*.js",
-        "rules": {
-          "import/no-extraneous-dependencies": 0,
-          "unicorn/no-process-exit": 0
-        }
-      }
-    ]
-  },
-  "babel": {
-    "presets": [
-      "latest",
-      "stage-2"
-    ]
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    },
-    "setupFiles": [
-      "<rootDir>/test/setup.js"
-    ],
-    "testMatch": [
-      "<rootDir>/test/**/*.test.js"
-    ]
-  },
-  "repository": "https://github.com/seacucumba/wavelo-stats.git",
-  "author": "Pavel Strashnov"
+  "repository": "https://github.com/seacucumba/wavelo-stats.git"
 }

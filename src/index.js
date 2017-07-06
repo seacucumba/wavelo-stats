@@ -1,14 +1,11 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
-import fetchival from 'fetchival'
-fetchival.fetch = require('node-fetch')
-
-import micro, {send} from 'micro'
-import {router, get, post} from 'microrouter'
-import connect from './db'
-import hubs from './api/hubs'
-import system from './api/system'
+require('dotenv').config()
+require('fetchival').fetch = require('node-fetch')
+const micro = require('micro')
+const {send} = micro
+const {router, get, post} = require('microrouter')
+const connect = require('./db')
+const hubs = require('./api/hubs')
+const system = require('./api/system')
 
 const notFound = (req, res) => send(res, 404, 'Not Found')
 
@@ -26,4 +23,4 @@ connect().then(() => {
   srv.listen(port, () => console.log('Listening on port ' + port))
 })
 
-export default srv;
+module.exports = srv

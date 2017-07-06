@@ -1,5 +1,6 @@
-import mongoose, {Schema} from 'mongoose'
-import 'mongoose-geojson-schema'
+const mongoose = require('mongoose')
+const {Schema} = mongoose
+require('mongoose-geojson-schema')
 
 const hubSchema = mongoose.Schema({
   extId: String,
@@ -15,4 +16,4 @@ const hubSchema = mongoose.Schema({
 })
 
 
-export default mongoose.model('Hub', hubSchema)
+module.exports = mongoose.model('Hub', hubSchema)
